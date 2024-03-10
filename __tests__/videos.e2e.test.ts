@@ -1,6 +1,6 @@
-import { SETTINGS } from "../src/settings";
+import { SETTINGS } from "../src/main/settings";
 const request = require("supertest");
-import { app } from "../src/app";
+import { app } from "../src/main/app";
 import { VideoDbType } from "../src/db/video-db-type";
 
 const data = {

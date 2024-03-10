@@ -17,11 +17,9 @@ export const updateVideoController = (
     res.status(400).json(errors);
     return;
   }
-  console.log(db.videos);
   const videoToUpdateIndex = db.videos.findIndex(
     (video) => video.id == videoId,
   );
-  console.log(videoToUpdateIndex);
   if (videoToUpdateIndex === -1) {
     res.sendStatus(404);
     return;
