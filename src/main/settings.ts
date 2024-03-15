@@ -6,5 +6,7 @@ export const SETTINGS = {
   PATH: {
     VIDEOS: "/videos",
     DELETE: "/testing",
+    POSTS:'/posts',
+    BLOGS:'/blogs'
   },
 };

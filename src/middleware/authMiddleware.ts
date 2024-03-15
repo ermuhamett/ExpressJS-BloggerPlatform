@@ -3,7 +3,7 @@ import {ADMIN_AUTH} from "../posts";
 
 export const authMiddleware=(req:Request, res:Response, next:NextFunction)=>{
     const auth=req.headers['authorization'] as string //Basic xxxx
-    console.log(auth)
+    //console.log(auth)
     if(!auth){
         res.status(401).json({})
         return

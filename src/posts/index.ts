@@ -26,7 +26,7 @@ const postTitleValidator = body(fieldsForPosts.title)
     .isLength({max: 30}).withMessage('Title must be at most 30 characters long').bail();
 
 const postShortDescriptionValidator = body(fieldsForPosts.shortDescription)
-    .trim().notEmpty().withMessage('Title cannot be empty').bail()
+    .trim().notEmpty().withMessage('Short Description cannot be empty').bail()
     .isString().withMessage('Short Description must be a string').bail()
     .isLength({max: 100}).withMessage('Short Description must be at most 100 characters long').bail();
 
