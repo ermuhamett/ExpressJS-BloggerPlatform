@@ -4,8 +4,8 @@ import { putUpdateValidation } from "./index";
 import { OutputErrorsType } from "../input-output-types/output-errors-type";
 import { db } from "../db/db";
 export const updateVideoController = (
-  req: Request<{ id: string }>,
-  res: Response<UpdateVideoType | OutputErrorsType>,
+    req: Request<{ id: string }>,
+    res: Response<UpdateVideoType | OutputErrorsType>,
 ) => {
   const videoId = req.params.id;
   if (!videoId) {
@@ -17,11 +17,9 @@ export const updateVideoController = (
     res.status(400).json(errors);
     return;
   }
-  console.log(db.videos);
   const videoToUpdateIndex = db.videos.findIndex(
-    (video) => video.id == videoId,
+      (video) => video.id == videoId,
   );
-  console.log(videoToUpdateIndex);
   if (videoToUpdateIndex === -1) {
     res.sendStatus(404);
     return;
