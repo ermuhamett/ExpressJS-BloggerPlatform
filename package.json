@@ -1,26 +1,40 @@
 {
-  "name": "start-new-project",
+  "name": "hw08",
   "version": "1.0.0",
-  "main": "src/index.ts",
+  "main": "index.js",
   "license": "MIT",
   "scripts": {
     "dev": "yarn nodemon --inspect dist/index.js",
     "watch": "tsc -w",
-    "jest": "jest"
+    "jest": "jest --detectOpenHandles"
   },
   "dependencies": {
-    "@types/jest": "^29.5.12",
-    "@types/supertest": "^6.0.2",
+    "bcrypt": "^5.1.1",
+    "cookie-parser": "^1.4.6",
+    "date-fns": "^3.6.0",
     "dotenv": "^16.4.5",
-    "express": "^4.18.2",
-    "jest": "^29.7.0",
-    "supertest": "^6.3.4",
-    "ts-jest": "^29.1.2"
+    "express": "^4.18.3",
+    "express-validator": "^6.14.0",
+    "jsonwebtoken": "^9.0.2",
+    "mongodb": "^6.4.0",
+    "nodemailer": "^6.9.13",
+    "uuid": "^9.0.1"
   },
   "devDependencies": {
+    "@types/bcrypt": "^5.0.2",
+    "@types/cookie-parser": "^1.4.7",
     "@types/express": "^4.17.21",
-    "@types/node": "^20.11.20",
+    "@types/jest": "^29.5.12",
+    "@types/jsonwebtoken": "^9.0.6",
+    "@types/node": "^20.11.24",
+    "@types/nodemailer": "^6.4.14",
+    "@types/supertest": "^6.0.2",
+    "@types/uuid": "^9.0.8",
+    "jest": "^29.7.0",
+    "mime": "^4.0.1",
     "nodemon": "^3.1.0",
+    "supertest": "^6.3.4",
+    "ts-jest": "^29.1.2",
     "ts-node": "^10.9.2",
     "typescript": "^5.3.3"
   }
