@@ -2,12 +2,14 @@
 
 export type DBType = {
   videos: any[]; // VideoDBType[]
-  // some: any[]
+  posts: any[];
+  blogs:any[]
 };
 
 export const db: DBType = {
   videos: [],
-  // some: []
+  posts: [],
+  blogs:[]
 };
 
 export const setDB = (dataset?: Partial<DBType>) => {

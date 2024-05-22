@@ -1,6 +1,7 @@
 /** @type {import('ts-jest').JestConfigWithTsJest} */
 module.exports = {
-  preset: "ts-jest",
-  testEnvironment: "node",
-  testRegex: "__tests__/.*.e2e.test.ts$",
+  preset: 'ts-jest',
+  testEnvironment: 'node',
+  //testRegex: "__tests__/.*.e2e.test.ts$",
+  testRegex: '.[e2e|integration|unit].test.ts$',
 };
