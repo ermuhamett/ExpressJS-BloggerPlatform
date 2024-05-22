@@ -1,7 +1,7 @@
-import { SETTINGS } from "../src/settings";
+import { SETTINGS } from "../src/main/settings";
 const request = require("supertest");
-import { app } from "../src/app";
-import { VideoDbType } from "../src/db/video-db-type";
+import { app } from "../src/main/app";
+import { VideoDbType } from "../src/types/video-db-type";
 
 const data = {
   title: "string",
@@ -37,13 +37,13 @@ describe("./videos", () => {
 
   it("Create new video with POST", async () => {
     const response = await request(app)
-      .post("/videos")
-      .send({
-        title: "string",
-        author: "string",
-        availableResolutions: ["P144"],
-      })
-      .expect(201);
+        .post("/videos")
+        .send({
+          title: "string",
+          author: "string",
+          availableResolutions: ["P144"],
+        })
+        .expect(201);
     expect(response.body.author).toBe("string");
     expect(response.body.title).toBe("string");
     expect(response.body.availableResolutions[0]).toBe("P144");
@@ -57,28 +57,28 @@ describe("./videos", () => {
   });
   it("- POST does not create the video with incorrect data (no title, no author)", async () => {
     await request(app)
-      .post("/videos/")
-      .send({ title: "", author: "" })
-      .expect(400, {
-        errorsMessages: [
-          { message: "Title must be a string", field: "title" },
-          { message: "Author must be a string", field: "author" },
-        ],
-      });
+        .post("/videos/")
+        .send({ title: "", author: "" })
+        .expect(400, {
+          errorsMessages: [
+            { message: "Title must be a string", field: "title" },
+            { message: "Author must be a string", field: "author" },
+          ],
+        });
     const res = await request(app).get("/videos/");
     expect(res.body.length).toEqual(1);
   });
   it("PUT video by id", async () => {
     const response = await request(app)
-      .put("/videos/" + video.id)
-      .send(data);
+        .put("/videos/" + video.id)
+        .send(data);
     expect(response.status).toBe(204);
     //expect(response.body.title).toBe("string");
   });
   it("PUT video by wrong data", async () => {
     const response = await request(app)
-      .put("/videos/" + video.id)
-      .send(wrongData);
+        .put("/videos/" + video.id)
+        .send(wrongData);
     expect(response.status).toBe(400);
   });
   it("PUT video by wrong id", async () => {
