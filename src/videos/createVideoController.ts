@@ -6,7 +6,7 @@ import {
   Resolutions,
 } from "../input-output-types/video-types";
 import { OutputErrorsType } from "../input-output-types/output-errors-type";
-import { VideoDbType } from "../db/video-db-type";
+import { VideoDbType } from "../types/video-db-type";
 import { inputValidation } from "./index";
 
 export type ParamType = {
@@ -23,13 +23,13 @@ export type QueryType = {
 };
 
 export const someController = (
-  req: Request<ParamType, any, BodyType, QueryType>,
-  res: Response<void | OutputErrorsType>,
+    req: Request<ParamType, any, BodyType, QueryType>,
+    res: Response<void | OutputErrorsType>,
 ) => {};
 
 export const createVideoController = (
-  req: Request<any, any, InputVideoType>,
-  res: Response<OutputVideoType | OutputErrorsType>,
+    req: Request<any, any, InputVideoType>,
+    res: Response<OutputVideoType | OutputErrorsType>,
 ) => {
   const errors = inputValidation(req.body);
   if (errors.errorsMessages.length) {

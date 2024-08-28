@@ -1,6 +1,6 @@
-import { Router } from "express";
-import { deleteAllVideoController } from "./deleteAllVideoController";
+import {Router} from "express";
+import {deleteAllDataController} from "./deleteAllDataController";
 
 export const testingRouter = Router();
 
-testingRouter.delete("/all-data", deleteAllVideoController);
+testingRouter.delete("/all-data", deleteAllDataController);
